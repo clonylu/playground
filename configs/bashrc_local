@@ -1,0 +1,70 @@
+## Example config to source setup.sh and install/set zsh
+
+if [[ -s ~/pipedream/setup.sh ]]; then
+    source ~/pipedream/setup.sh
+fi
+
+
+#which zsh || { sudo apt-get -y install zsh; }
+
+#if [[ ! $SHELL == "/usr/bin/zsh" ]]; then 
+#    sudo chsh -s /usr/bin/zsh support
+#fi
+
+alias mysql_conn_local='mysql --user=root --password=PipedreamPassword! -h 172.17.0.2'
+
+
+### GIT ###
+git config --global user.email "chloe.lxd@gmail.com"
+git config --global user.name "Chloe Lu"
+
+function gitadd(){
+    if [[ ${1: -3} == ".sh" ]]
+        then git update-index --chmod=+x $1
+    fi
+    git add $1
+ }
+alias gitadd='gitadd'
+
+### PROMPT ###
+[[ ! -d ~/.bash ]] && mkdir ~/.bash
+if [[ -d ~/.bash/git-aware-prompt ]]; then
+    cd ~/.bash/git-aware-prompt && git pull
+else
+    cd ~/.bash
+    git clone git://github.com/jimeh/git-aware-prompt.git
+fi
+cd ~/
+export GITAWAREPROMPT=~/.bash/git-aware-prompt
+source "${GITAWAREPROMPT}/main.sh"
+export PS1="\${debian_chroot:+(\$debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+
+### python libs ###
+sudo pip install --upgrade pip
+sudo pip install pydevd
+
+[[ -f ~/.INIT_SUCCESS ]] && return 0
+
+## NOTE: Heavy weight functions goes after this point!!!
+
+### Various support dirs ### 
+function mkdir_if_missing() {
+    dir=$1
+    [[ ! -d "$dir" ]] && mkdir $dir
+}
+
+mkdir_if_missing "/home/support/logs"
+[[ ! -d "/home/support/automation" ]] && git clone git@github.com:chloeLu/playground.git /home/support/automation
+
+
+#scripts
+cd /home/support/automation && git pull
+cd ~/
+[[ ! -f ~/.vim/INIT_DONE ]] && cp /home/support/automation/configs/vim/.vimrc ~/.vimrc && /home/support/automation/configs/vim/setup_vim.sh
+
+
+touch ~/.INIT_SUCCESS
+
+# install missing bash cmds
+sudo apt-get udpate
+sudo apt-get install man -y
