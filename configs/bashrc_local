@@ -39,10 +39,6 @@ export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
 export PS1="\${debian_chroot:+(\$debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
 
-### python libs ###
-sudo pip install --upgrade pip
-sudo pip install pydevd
-
 [[ -f ~/.INIT_SUCCESS ]] && return 0
 
 ## NOTE: Heavy weight functions goes after this point!!!
@@ -62,9 +58,29 @@ cd /home/support/automation && git pull
 cd ~/
 [[ ! -f ~/.vim/INIT_DONE ]] && cp /home/support/automation/configs/vim/.vimrc ~/.vimrc && /home/support/automation/configs/vim/setup_vim.sh
 
+# install go
+wget https://redirector.gvt1.com/edgedl/go/go1.9.2.linux-amd64.tar.gz ~/
+sudo tar -C /usr/local -xzf go1.9.2.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH="/usr/local/go"
+
+# install etcd
+ETCD_VER=v2.2.5
+GOOGLE_URL=https://storage.googleapis.com/etcd
+DOWNLOAD_URL=${GOOGLE_URL}
+rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+rm -rf ~/etcd && mkdir -p ~/etcd
+curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-linux-amd64.tar.gz -o /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+tar xzvf /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz -C ~/etcd --strip-components=1
+rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
+~/etcd/etcd --version
+
+# install missing libs
+sudo dpkg --add-architecture i386
+sudo apt-get update 
+sudo apt-get install man -y
+sudo apt-get install libc6:i386 libstdc++6:i386 -y
+#sudo pip install --upgrade pip
+#sudo pip install pydevd
 
 touch ~/.INIT_SUCCESS
-
-# install missing bash cmds
-sudo apt-get udpate
-sudo apt-get install man -y
