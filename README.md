@@ -1,2 +1,0 @@
-# playground
-Just a playground
