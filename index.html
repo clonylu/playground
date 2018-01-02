@@ -19,43 +19,37 @@
     <div class="header">
       <div class="row">
         <div class="col-8">
-          <h1 class="text-muted">Chloe Lu</h1>
-          <div class="row-1">
-            <span><i class="fas fa-phone"></i></span>
-            <span>+1(734)926-6782</span>
-          </div>
-          <div class="row-1">
-            <span><i class="far fa-envelope"></i></span>
-            <span><a href="chloe.lxd@gmail.com">chloe.lxd@gmail.com</a></span>
-          </div>
-          <div class="row-1">
-            <span><i class="fab fa-linkedin-in"></i></span>
-            <a href="https://www.linkedin.com/in/chloe-xiaodi-lu-31558675">
-              https://www.linkedin.com/in/chloe-xiaodi-lu-31558675</a>
+          <h1 class="text-muted" style="margin-bottom:2rem">Chloe Lu</h1>
+          <div class="row" id="contact">
+            <div class="col-md">
+              <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="+1 (734)926-6782">
+                <i class="fas fa-phone fa-3x"></i>
+              </button>
+              <!-- <i class="fas fa-phone fa-3x" data-toggle="popover" data-placement="top" data-content="+1 (734)926-6782"></i> -->
             </div>
-            <div class="row">
-              <div class="col">
-                <span>
-                  <i class="fab fa-github"></i>
-                </span>
-                <span>
-                  <a href="https://github.com/chloeLu">
-                    https://github.com/chloeLu
-                  </a>
-                </span>
-              </div>
+            <div class="col-md">
+              <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="chloe.lxd@gmail.com">
+                <i class="far fa-envelope fa-3x"></i>
+              </button>
             </div>
+            <div class="col-md">
+              <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="https://www.linkedin.com/in/chloe-xiaodi-lu-31558675">
+                <i class="fab fa-linkedin-in fa-3x"></i>
+              </button>
+            </div>
+            <div class="col-md">
+              <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="https://github.com/chloeLu">
+                <i class="fab fa-github fa-3x"></i>
+              </button>
+            </div>
+          </div>
         </div>
         <div class="col-4">
-          <img src="https://vignette1.wikia.nocookie.net/secretlifeofpets/images/f/f2/Chloe.png/revision/latest?cb=20160614111511"
-            class="rounded mx-auto img-fluid" />
+          <img src="https://vignette1.wikia.nocookie.net/secretlifeofpets/images/f/f2/Chloe.png/revision/latest?cb=20160614111511" class="rounded mx-auto img-fluid" />
         </div>
       </div>
     </div>
 
-    <p class="text-justify">
-      Programming is fun and applications are meaningful when they create business value and solve real-world problems.
-    </p>
     <h2>Professional Skills</h2>
     <table class="table table-sm table-striped">
       <tbody>
@@ -223,6 +217,11 @@
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script>
+    $(function() {
+      $('[data-toggle="popover"]').popover()
+    })
+  </script>
 
 </body>
 
