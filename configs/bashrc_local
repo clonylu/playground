@@ -80,6 +80,9 @@ sudo dpkg --add-architecture i386
 sudo apt-get update 
 sudo apt-get install man -y
 sudo apt-get install libc6:i386 libstdc++6:i386 -y
+sudo apt-get install rlwrap
+
+alias ipython="rlwarp ipython"
 #sudo pip install --upgrade pip
 #sudo pip install pydevd
 
