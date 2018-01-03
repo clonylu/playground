@@ -1,13 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
 /* Space out content a bit */
 body {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
-
+h1 {
+  margin-bottom: 2rem;
+  font-family: 'Montserrat';
+}
 h2 {
   margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-family: 'Montserrat';
 }
 
+#davinciquote {
+  font-family: Titillium Web;
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -18,6 +28,8 @@ h2 {
 
 /* Custom page header */
 .header {
+  font-family: 'Montserrat';
+  margin-top: 2rem;
   padding-bottom: 1rem;
   border-bottom: .05rem solid #e5e5e5;
 }
@@ -36,10 +48,15 @@ h2 {
   border-top: .05rem solid #e5e5e5;
 }
 
+.contactbtn {
+  width: 80%;
+
+}
+
 /* Customize container */
-@media (min-width: 60em) {
+@media (min-width: 54em) {
   .container {
-    max-width: 58rem;
+    max-width: 52rem;
   }
 }
 .container-narrow > hr {
