@@ -6,10 +6,11 @@ body {
   padding-bottom: 1.5rem;
 }
 h1 {
+  margin-top: 2rem;
   margin-bottom: 2rem;
   font-family: 'Montserrat';
 }
-h2 {
+h3 {
   font-family: 'Montserrat';
 }
 
@@ -53,30 +54,16 @@ h2 {
 }
 
 /* Customize container */
-@media (min-width: 54em) {
+@media (min-width: 48em) {
   .container {
-    max-width: 52rem;
+    max-width: 46rem;
   }
 }
 .container-narrow > hr {
   margin: 2rem 0;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: .05rem solid #e5e5e5;
-}
-.jumbotron .btn {
-  padding: .75rem 1.5rem;
-  font-size: 1.5rem;
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 3rem 0;
-}
-.marketing p + h4 {
+.tab-pane {
   margin-top: 1.5rem;
 }
 
