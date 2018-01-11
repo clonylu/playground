@@ -4,6 +4,7 @@
 body {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+  font-family: Titillium Web;
 }
 h1 {
   margin-top: 2rem;
@@ -15,8 +16,26 @@ h3 {
 }
 
 
-#davinciquote {
-  font-family: Titillium Web;
+.exptitle {
+  border-right: #cdcdcd solid;
+}
+
+.row-odd {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding-top: 0.5rem;
+  padding-bottom: .5rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.row-even {
+  background-color: #fafafa;
+  border-radius: 10px;
+  padding-top: 0.5rem;
+  padding-bottom: .5rem;
+  margin-left: 0;
+  margin-right: 0;
 }
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
