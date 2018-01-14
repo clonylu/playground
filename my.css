@@ -15,22 +15,11 @@ h3 {
   font-family: 'Montserrat';
 }
 
-
 .exptitle {
   border-right: #cdcdcd solid;
 }
 
-.row-odd {
-  background-color: #f1f1f1;
-  border-radius: 10px;
-  padding-top: 0.5rem;
-  padding-bottom: .5rem;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.row-even {
-  background-color: #fafafa;
+.row-banded {
   border-radius: 10px;
   padding-top: 0.5rem;
   padding-bottom: .5rem;
