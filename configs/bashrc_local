@@ -64,17 +64,6 @@ sudo tar -C /usr/local -xzf go1.9.2.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH="/usr/local/go"
 
-# install etcd
-ETCD_VER=v2.2.5
-GOOGLE_URL=https://storage.googleapis.com/etcd
-DOWNLOAD_URL=${GOOGLE_URL}
-rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
-rm -rf ~/etcd && mkdir -p ~/etcd
-curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-linux-amd64.tar.gz -o /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
-tar xzvf /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz -C ~/etcd --strip-components=1
-rm -f /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
-~/etcd/etcd --version
-
 # install missing libs
 sudo dpkg --add-architecture i386
 sudo apt-get update 
