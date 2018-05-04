@@ -82,7 +82,6 @@ sudo apt-get install man -y
 sudo apt-get install libc6:i386 libstdc++6:i386 -y
 sudo apt-get install rlwrap
 
-#sudo pip install --upgrade pip
-#sudo pip install pydevd
+pip install --user pydevd
 
 touch ~/.INIT_SUCCESS
