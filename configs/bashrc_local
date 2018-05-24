@@ -43,10 +43,18 @@ cd ~/
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
 export PS1="\${debian_chroot:+(\$debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
-export PATH=$PATH:/usr/local/go/bin:/home/support/pipedream/diagnostics
+export PATH=$PATH:/usr/local/go/bin:/home/support/pipedream/diagnostics:/home/support/.local/bin
 export GOPATH="/usr/local/go"
 export PYTHONSTARTUP="/home/support/automation/configs/pythonstartup"
+export PYTHONPATH=$PYTHONPATH/home/support/pipedream/pycharm-debug/pycharm-debug.egg:
 alias ipython="rlwrap ipython"
+alias cdpd="cd ~/pipedream"
+alias ,gs="git status"
+alias ,gd="git diff"
+alias ,gl="git log"
+alias ,gc="git checkout"
+alias ,gcm="git checkout master"
+alias ,gb="git branch"
 
 ### API KEYS ###
 
@@ -83,5 +91,6 @@ sudo apt-get install libc6:i386 libstdc++6:i386 -y
 sudo apt-get install rlwrap
 
 pip install --user pydevd
+pip install --user behave==1.2.5
 
 touch ~/.INIT_SUCCESS
