@@ -18,6 +18,15 @@ export AK_DEV_CLUSTER_1='5T7v7SfzIpZKeb'
 
 alias mysql_conn_local='mysql --user=root --password=PipedreamPassword! -h 172.17.0.2'
 
+function gitpushforce(){
+    cd ~/pipedream
+    curr_branch=$(git branch | grep '*' | cut -d' ' -f2)
+    echo "Current branch: $curr_branch"
+    #git push origin $curr_branch --force
+}
+
+alias gpf='gitpushforce'
+
 
 ### GIT ###
 git config --global user.email "chloe.lxd@gmail.com"
