@@ -33,7 +33,7 @@ h3 {
 }
 
 .companylogo {
-  max-height:50px;
+  max-height:40px;
 }
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -71,9 +71,9 @@ h3 {
 }
 
 /* Customize container */
-@media (min-width: 48em) {
+@media (min-width: 52em) {
   .container {
-    max-width: 46rem;
+    max-width: 48rem;
   }
 }
 .container-narrow > hr {
